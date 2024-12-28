@@ -1,0 +1,7 @@
+console.log("editing comment");
+
+var edit_form = $("<%= j(render 'comments/form', comment: @comment) %>");
+
+$("#<%= dom_id(@comment) %>").fadeOut(1000, function() {
+  $(this).replaceWith(edit_form);
+});
