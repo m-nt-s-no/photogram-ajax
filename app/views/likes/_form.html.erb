@@ -1,11 +1,13 @@
-<%= form_with(model: like, class: "d-inline-block") do |form| %>
-  <%= form.hidden_field :fan_id %>
+<div id="likes_form">
+  <%= form_with(model: like, class: "d-inline-block", local: false) do |form| %>
+    <%= form.hidden_field :fan_id %>
 
-  <%= form.hidden_field :photo_id %>
+    <%= form.hidden_field :photo_id %>
 
-  <%= form.button class: "btn btn-link link-underline link-underline-opacity-0 link-underline-opacity-100-hover" do %>
-    <i class="far fa-heart fa-fw"></i>
+    <%= form.button class: "btn btn-link link-underline link-underline-opacity-0 link-underline-opacity-100-hover" do %>
+      <i class="far fa-heart fa-fw"></i>
 
-    Like
+      Like
+    <% end %>
   <% end %>
-<% end %>
+</div>
