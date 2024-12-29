@@ -1,8 +1,5 @@
 console.log("unliked!");
 
-var FormToLike = $("<%= j(render 'likes/form', like: @photo.likes.build(fan: current_user)) %>");
-$('#like_or_unlike').html(FormToLike);
-
-// var likes_form = $("<%= j(render 'likes/form', like: photo.likes.build(fan: current_user)) %>");
-// var link_to_unlike = $("<div id='link_to_unlike'></div>");
-// link_to_unlike.replaceWith(likes_form);
+var likes_form = "#<%= dom_id(@like.photo) %>_likes";
+var new_form = "<%= j(render "photos/likes", photo: @like.photo) %>";
+likes_form.replaceWith(new_form);

@@ -4,7 +4,6 @@
 
     <% like = current_user.likes.find_by(photo: photo) %>
 
-    <div id="like_or_unlike">
     <% if like %>
         <%= link_to like, class: "btn btn-link link-underline-dark link-underline link-underline-opacity-0 link-underline-opacity-100-hover", remote: true, method: :delete do %>
           <i class="fas fa-heart fa-fw"></i>
@@ -14,6 +13,5 @@
     <% else %>
       <%= render "likes/form", like: photo.likes.build(fan: current_user) %>
     <% end %>
-    </div>
   </div>
 </div>

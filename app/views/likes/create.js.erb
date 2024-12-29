@@ -1,8 +1,5 @@
-console.log("new like!");
+// console.log("new like!");
 
-var linkToUnlike = $("<%= j(link_to like, class: 'btn btn-link link-underline-dark link-underline link-underline-opacity-0 link-underline-opacity-100-hover', remote: true, method: :delete) %>");
-$('#like_or_unlike').html(linkToUnlike);
-
-// var likes_form = $("<%= j(render 'likes/form', like: @photo.likes.build(fan: current_user)) %>");
-// var link_to_unlike = $("<div id='link_to_unlike'></div>");
-// likes_form.replaceWith(link_to_unlike);
+var likes_link = "#<%= dom_id(@like.photo) %>_likes";
+var new_link = "<%= j(render "photos/likes", photo: @like.photo) %>";
+$(likes_link).replaceWith(new_link);
