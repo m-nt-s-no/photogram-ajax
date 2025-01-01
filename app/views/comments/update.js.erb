@@ -1,0 +1,7 @@
+console.log("comment updated!");
+
+var updated_comment = $("<%= j(render 'comments/comment', comment: @comment) %>");
+
+$("#<%= dom_id(@comment.photo) %>_new_comment_form").fadeOut(1000, function() {
+  $(this).replaceWith(updated_comment);
+});
