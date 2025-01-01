@@ -1,9 +1,4 @@
 
-var target = "#<%= dom_id(@sender) %>_<%= dom_id(@recipient) %>_follow_unfollow";
+var targetClass = ".<%= dom_id(@sender) %>_<%= dom_id(@recipient) %>_follow_unfollow";
 
-$.ajax({
-  url: target,
-  success: function(data) {
-    $(target).html("<%= j(render partial: 'follow_requests/follow_unfollow', locals: { sender: @sender, recipient: @recipient }) %>");
-  }
-});
+$(targetClass).html("<%= j(render partial: 'follow_requests/follow_unfollow', locals: { sender: @sender, recipient: @recipient }) %>");
