@@ -1,0 +1,5 @@
+console.log("unliked!");
+
+var likes_link = "#<%= dom_id(@like.photo) %>_likes";
+var new_link = "<%= j(render "photos/likes", photo: @like.photo) %>";
+$(likes_link).replaceWith(new_link);
